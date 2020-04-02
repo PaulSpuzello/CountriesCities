@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Results Page</title>
+</head>
+<body>
+<form>
+<table>
+	<tr th:each="currentCountry: ${country}">
+	<td th:text="${currentCountry.id}" />
+	<td th:text="${currentCountry.name}" />
+	<td th:text="${currentCountry.continent}" />
+	<td th:text="${currentCountry.UNMember}" />	
+	<td th:text="${currentCountry.cities.capital}" />
+	<td th:text="${currentCountry.cities.secondLargest}" />
+		
+	<td><a th:href="@{/edit/{id}(id=${currentCountry.id})}">Edit</a></td>
+	<td><a th:href="@{/delete/{id}(id=${currentCountry.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputCountry">Add a new country</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Input Page</title>
+</head>
+<body>
+	<form th:object="${newCountry}" th:action="@{/update/{id}(id=${newCountry.id})}" method=POST>
+		Name: <input name="name" size="30" th:field="*{name}"> <br />
+		Capital: <input name="cities.capital" size="30" th:field="*{cities.capital}"> <br />
+		Continent: <input name="continent" size="20" th:field="*{continent}"> <br />
+		United Nations Member: <br />
+		True: <input name="UNMember" input type="radio" value="True" th:field="*{UNMember}">
+		False: <input name="UNMember" input type="radio" value="False" th:field="*{UNMember}"> <br />
+		Second Largest City: <input name="cities.secondLargest" size="30" th:field="*{cities.secondLargest}"> <br />
+		<input name="Submit" type="submit" value="submit" />
+	</form>
+	<a href="viewAll">View all Countries</a>
+</body>
+</html>
